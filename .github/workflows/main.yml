@@ -1,8 +1,14 @@
-name: ci/cd teste
-on:
+name: Hello World Workflow
+
+on: [push]
+
 jobs:
-frist-job:
-  runs on: ubuntu-latest
-  steps:
-    -name: says hello world
-    run: echo "hello world"
+  hello_world:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Run Hello World
+      run: echo "Hello, World!"
